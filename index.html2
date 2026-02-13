@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine!</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    background: linear-gradient(to top, #87ceeb, #cce7ff); /* sky gradient */
+    position: relative;
+    font-family: sans-serif;
+  }
+
+  /* Message at top */
+  .message {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #004080;
+    text-shadow: 2px 2px 5px #ffffffaa;
+  }
+
+  /* Tulip container */
+  .tulip-container {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* Tulip images */
+  .tulip {
+    width: 50px;
+    animation: sway 3s ease-in-out infinite alternate;
+    transform-origin: bottom center;
+  }
+
+  .tulip:nth-child(odd) {
+    animation-delay: 0.5s;
+  }
+
+  .tulip:nth-child(3n) {
+    animation-delay: 1s;
+  }
+
+  @keyframes sway {
+    0% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: absolute;
+    font-size: 20px;
+    color: #00bfff;
+    animation: floatUp 5s linear infinite;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-800px) translateX(50px);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="message">HAPPY VALENTINE MY WIFYY 💙</div>
+
+<!-- Tulips -->
+<div class="tulip-container">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+  <img class="tulip" src="https://i.ibb.co/0FBh8kx/blue-tulip.png" alt="Blue Tulip">
+</div>
+
+<script>
+  // Floating hearts
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.fontSize = 20 + Math.random() * 20 + 'px';
+    heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+    heart.innerText = '💙';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }
+
+  setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
